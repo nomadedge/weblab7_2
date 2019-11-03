@@ -1,0 +1,6 @@
+{
+  "short_name": "weblab7_2",
+  "name": "Weather React-Redux",
+  "start_url": ".",
+  "display": "standalone"
+}
