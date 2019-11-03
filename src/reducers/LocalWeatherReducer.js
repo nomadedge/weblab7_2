@@ -1,6 +1,5 @@
 const initialState = {
     isFetching: false,
-    isFetched: false,
     city: null,
     weather: {},
     error: null
@@ -25,7 +24,6 @@ export default function reducer(state = initialState, action) {
             return {
                 ...state,
                 isFetching: false,
-                isFetched: true,
                 city: action.payload.city,
                 weather: action.payload.weather
             };

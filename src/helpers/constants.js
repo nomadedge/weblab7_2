@@ -1,1 +1,1 @@
-export const defaultError = "Oops, something went wrong :(";
+export const defaultError = 'Oops, something went wrong :(';

@@ -1,4 +1,4 @@
-const openWeatherKey = "d5bb735f9e1ce1a846ab736fc9d95dc6";
+const openWeatherKey = 'd5bb735f9e1ce1a846ab736fc9d95dc6';
 
 export function getWeather(cityName) {
     return new Promise(async result => {

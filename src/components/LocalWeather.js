@@ -12,6 +12,7 @@ class LocalWeather extends Component {
 
     render() {
         const { localWeather } = this.props;
+
         if (localWeather.isFetching) {
             return (
                 <Loader />
