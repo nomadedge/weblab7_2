@@ -1,0 +1,1 @@
+export const defaultError = "Oops, something went wrong :(";
