@@ -4,6 +4,9 @@ import { connect } from 'react-redux';
 import { fetchCityWeather } from '../actions/FavoriteCitiesActions';
 
 import Loader from './Loader';
+
+import '../styles/Weather.css';
+
 class FavoriteCityWeather extends Component {
     componentDidMount() {
         const { cityName, fetchCityWeather } = this.props;
@@ -17,42 +20,64 @@ class FavoriteCityWeather extends Component {
         if (city.isFetching) {
             return (
                 <>
-                    <div id='top-block'>
-                        <div id='city-name'>{city.name}</div>
-                        <button onClick={() => onDelete(city.name)}>Delete city</button>
+                    <div id='weather-container'>
+
+                        <div id='left-block'>
+                            <button id='delete-button' onClick={() => onDelete(city.name)}>Delete city</button>
+                            <div id='city-name'>{city.name}</div>
+                        </div>
+                        <div id='right-block'>
+                            <Loader />
+                        </div>
                     </div>
-                    <Loader />
                 </>
             )
         }
         if (city.error !== null) {
             return (
                 <>
-                    <div id='top-block'>
-                        <div id='city-name'>{city.name}</div>
-                        <button onClick={() => onDelete(city.name)}>Delete city</button>
+                    <div id='weather-container'>
+                        <div id='left-block'>
+                            <button id='delete-button' onClick={() => onDelete(city.name)}>Delete city</button>
+                            <div id='city-name'>{city.name}</div>
+                        </div>
+                        <div id='right-block'>
+                            <div>{city.error}</div>
+                        </div>
                     </div>
-                    <div>{city.error}</div>
                 </>
             )
         }
 
         return (
             <>
-                <div id='top-block'>
-                    <div id='city-name'>{city.name}</div>
-                    <div id='icon-temp'>
-                        <img src={city.weather.iconUrl} alt='Weather icon' />
-                        <div id='temp'>{city.weather.temperature}°C</div>
+                <div id='weather-container'>
+                    <div id='left-block'>
+                        <button id='delete-button' onClick={() => onDelete(city.name)}>Delete city</button>
+                        <div id='city-name'>{city.name}</div>
+                        <div id='icon-temp'>
+                            <img src={city.weather.iconUrl} alt='Weather icon' />
+                            <div id='temp'>{city.weather.temperature}°C</div>
+                        </div>
                     </div>
-                    <button onClick={() => onDelete(city.name)}>Delete city</button>
-                </div>
-
-                <div id='bottom-block'>
-                    <div id='description'>{city.weather.description}</div>
-                    <div>Barometer {city.weather.pressure} hPa</div>
-                    <div>Humidity {city.weather.humidity} %</div>
-                    <div>Wind {city.weather.windSpeed} m/s</div>
+                    <div id='right-block'>
+                        <div className='info'>
+                            <div>Description:</div>
+                            <div className='value'>{city.weather.description}</div>
+                        </div>
+                        <div className='info'>
+                            <div>Barometer:</div>
+                            <div className='value'>{city.weather.pressure} hPa</div>
+                        </div>
+                        <div className='info'>
+                            <div>Humidity:</div>
+                            <div className='value'>{city.weather.humidity} %</div>
+                        </div>
+                        <div className='info'>
+                            <div>Wind:</div>
+                            <div className='value'>{city.weather.windSpeed} m/s</div>
+                        </div>
+                    </div>
                 </div>
             </>
         );

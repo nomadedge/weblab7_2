@@ -3,8 +3,9 @@ import React, { Component } from 'react';
 import LocalWeather from './LocalWeather';
 import Favorites from './Favorites';
 
+import '../styles/App.css';
+
 class App extends Component {
-    state = {}
     render() {
         return (
             <>

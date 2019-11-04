@@ -5,6 +5,8 @@ import { fetchLocalWeather } from '../actions/LocalWeatherActions';
 
 import Loader from './Loader';
 
+import '../styles/Weather.css';
+
 class LocalWeather extends Component {
     componentDidMount() {
         this.props.fetchLocalWeather();
@@ -15,14 +17,18 @@ class LocalWeather extends Component {
 
         if (localWeather.isFetching) {
             return (
-                <Loader />
+                <div id='weather-container'>
+                    <Loader />
+                </div>
             )
         }
         if (localWeather.error !== null) {
             return (
                 <>
                     <button onClick={fetchLocalWeather}>Update local weather</button>
-                    <div>{localWeather.error}</div>
+                    <div id='weather-container'>
+                        <div>{localWeather.error}</div>
+                    </div>
                 </>
             )
         }
@@ -30,18 +36,32 @@ class LocalWeather extends Component {
             return (
                 <>
                     <button onClick={fetchLocalWeather}>Update local weather</button>
-                    <div id='left-block'>
-                        <div id='city-name'>{localWeather.city}</div>
-                        <div id='icon-temp'>
-                            <img src={localWeather.weather.iconUrl} alt='Weather icon' />
-                            <div id='temp'>{localWeather.weather.temperature}°C</div>
+                    <div id='weather-container'>
+                        <div id='left-block'>
+                            <div id='city-name'>{localWeather.city}</div>
+                            <div id='icon-temp'>
+                                <img src={localWeather.weather.iconUrl} alt='Weather icon' />
+                                <div id='temp'>{localWeather.weather.temperature}°C</div>
+                            </div>
                         </div>
-                    </div>
-                    <div id='right-block'>
-                        <div id='description'>{localWeather.weather.description}</div>
-                        <div>Barometer {localWeather.weather.pressure} hPa</div>
-                        <div>Humidity {localWeather.weather.humidity} %</div>
-                        <div>Wind {localWeather.weather.windSpeed} m/s</div>
+                        <div id='right-block'>
+                            <div className='info'>
+                                <div>Description:</div>
+                                <div className='value'>{localWeather.weather.description}</div>
+                            </div>
+                            <div className='info'>
+                                <div>Barometer:</div>
+                                <div className='value'>{localWeather.weather.pressure} hPa</div>
+                            </div>
+                            <div className='info'>
+                                <div>Humidity:</div>
+                                <div className='value'>{localWeather.weather.humidity} %</div>
+                            </div>
+                            <div className='info'>
+                                <div>Wind:</div>
+                                <div className='value'>{localWeather.weather.windSpeed} m/s</div>
+                            </div>
+                        </div>
                     </div>
                 </>
             );

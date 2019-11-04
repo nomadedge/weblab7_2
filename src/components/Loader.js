@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 
+import '../styles/Loader.css';
+
 class Loader extends Component {
     render() {
         return (
-            <div>Weather is loading...</div>
+            <div id='spinner'></div>
         );
     }
 }
