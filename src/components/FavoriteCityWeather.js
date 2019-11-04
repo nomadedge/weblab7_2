@@ -19,7 +19,7 @@ class FavoriteCityWeather extends Component {
                 <>
                     <div id='top-block'>
                         <div id='city-name'>{city.name}</div>
-                        <button onClick={onDelete}>Delete city</button>
+                        <button onClick={() => onDelete(city.name)}>Delete city</button>
                     </div>
                     <Loader />
                 </>
@@ -30,7 +30,7 @@ class FavoriteCityWeather extends Component {
                 <>
                     <div id='top-block'>
                         <div id='city-name'>{city.name}</div>
-                        <button onClick={onDelete}>Delete city</button>
+                        <button onClick={() => onDelete(city.name)}>Delete city</button>
                     </div>
                     <div>{city.error}</div>
                 </>
@@ -45,7 +45,7 @@ class FavoriteCityWeather extends Component {
                         <img src={city.weather.iconUrl} alt='Weather icon' />
                         <div id='temp'>{city.weather.temperature}°C</div>
                     </div>
-                    <button onClick={onDelete}>Delete city</button>
+                    <button onClick={() => onDelete(city.name)}>Delete city</button>
                 </div>
 
                 <div id='bottom-block'>

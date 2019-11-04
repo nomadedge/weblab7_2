@@ -1,6 +1,25 @@
+function loadFavorites() {
+    try {
+        const serializedFavorites = localStorage.getItem('favoriteCities');
+        if (serializedFavorites === null) return [];
+        const favoriteCities = JSON.parse(serializedFavorites);
+        const favorites = favoriteCities.map(cityName => {
+            return {
+                name: cityName,
+                error: null,
+                weather: {}
+            };
+        });
+        return favorites;
+    }
+    catch (e) {
+        return [];
+    }
+}
+
 const initialState = {
-    cities: []
-};
+    cities: loadFavorites()
+}
 
 export default function reducer(state = initialState, action) {
     switch (action.type) {
