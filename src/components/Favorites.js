@@ -20,7 +20,7 @@ class Favorites extends Component {
             <>
                 <form onSubmit={this.handleAdd}>
                     <input placeholder='Enter new favorite city' />
-                    <input type='submit' />
+                    <input type='submit' value='Add city' />
                 </form>
 
                 {this.props.favoriteCities.map(city => (

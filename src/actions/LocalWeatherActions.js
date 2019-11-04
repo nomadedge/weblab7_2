@@ -65,7 +65,7 @@ async function handleOpenWeather(cityName, dispatch) {
         return;
     }
     else {
-        dispatch({ type: 'FETCH_LOCAL_WEATHER_ERROR', payload: defaultError });
+        dispatch({ type: 'FETCH_LOCAL_WEATHER_ERROR', payload: 'Weather for your city is not available :(' });
         return;
     }
 }

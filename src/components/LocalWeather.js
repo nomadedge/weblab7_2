@@ -11,7 +11,7 @@ class LocalWeather extends Component {
     }
 
     render() {
-        const { localWeather } = this.props;
+        const { localWeather, fetchLocalWeather } = this.props;
 
         if (localWeather.isFetching) {
             return (
@@ -20,12 +20,16 @@ class LocalWeather extends Component {
         }
         if (localWeather.error !== null) {
             return (
-                <div>{localWeather.error}</div>
+                <>
+                    <button onClick={fetchLocalWeather}>Update local weather</button>
+                    <div>{localWeather.error}</div>
+                </>
             )
         }
         else {
             return (
                 <>
+                    <button onClick={fetchLocalWeather}>Update local weather</button>
                     <div id='left-block'>
                         <div id='city-name'>{localWeather.city}</div>
                         <div id='icon-temp'>
