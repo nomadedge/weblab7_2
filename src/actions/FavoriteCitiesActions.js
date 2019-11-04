@@ -2,12 +2,17 @@ import { getWeather } from '../helpers/weatherGetter';
 
 export function addCity(cityName, currentState) {
     return async function (dispatch) {
+        if (!cityName) {
+            alert('Please enter the city :)');
+            return;
+        }
+        cityName = cityName.trim();
         const cityNameFormatted = cityName[0].toUpperCase() + cityName.slice(1).toLowerCase();
         if (currentState.findIndex(city => city.name === cityNameFormatted) === -1) {
             dispatch({ type: 'ADD_CITY', payload: cityNameFormatted });
         }
         else {
-            alert('This city is already added!');
+            alert('This city is already added :/');
         }
     }
 }
