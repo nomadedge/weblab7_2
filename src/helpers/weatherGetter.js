@@ -32,7 +32,10 @@ export function getWeather(cityName) {
         } else {
             const out = {
                 isOk: false,
-                status: weatherData.status
+                error: {
+                    status: weatherJson.cod,
+                    message: weatherJson.message
+                }
             };
             result(out);
             return;
