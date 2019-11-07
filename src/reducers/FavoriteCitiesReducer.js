@@ -6,6 +6,7 @@ function loadFavorites() {
         const favorites = favoriteCities.map(cityName => {
             return {
                 name: cityName,
+                isFetching: false,
                 error: null,
                 weather: {}
             };
@@ -26,6 +27,7 @@ export default function reducer(state = initialState, action) {
         case 'ADD_CITY': {
             const cities = [...state.cities, {
                 name: action.payload,
+                isFetching: false,
                 error: null,
                 weather: {}
             }];
@@ -37,6 +39,9 @@ export default function reducer(state = initialState, action) {
         case 'DELETE_CITY': {
             const cities = [...state.cities];
             const index = cities.findIndex(city => city.name === action.payload);
+            if (index === -1) {
+                return state;
+            }
             cities.splice(index, 1);
             return {
                 ...state,
@@ -45,9 +50,12 @@ export default function reducer(state = initialState, action) {
         }
         case 'FETCH_CITY_WEATHER': {
             const cities = [...state.cities];
-            const cityToLoadIndex = cities.findIndex(city => city.name === action.payload);
-            cities[cityToLoadIndex] = {
-                ...cities[cityToLoadIndex],
+            const index = cities.findIndex(city => city.name === action.payload);
+            if (index === -1) {
+                return state;
+            }
+            cities[index] = {
+                ...cities[index],
                 isFetching: true
             };
             return {
@@ -57,9 +65,12 @@ export default function reducer(state = initialState, action) {
         }
         case 'FETCH_CITY_WEATHER_SUCCESS': {
             const cities = [...state.cities];
-            const cityToLoadIndex = cities.findIndex(city => city.name === action.payload.city);
-            cities[cityToLoadIndex] = {
-                ...cities[cityToLoadIndex],
+            const index = cities.findIndex(city => city.name === action.payload.city);
+            if (index === -1) {
+                return state;
+            }
+            cities[index] = {
+                ...cities[index],
                 isFetching: false,
                 weather: action.payload.weather
             };
@@ -70,9 +81,12 @@ export default function reducer(state = initialState, action) {
         }
         case 'FETCH_CITY_WEATHER_ERROR': {
             const cities = [...state.cities];
-            const cityToLoadIndex = cities.findIndex(city => city.name === action.payload.city);
-            cities[cityToLoadIndex] = {
-                ...cities[cityToLoadIndex],
+            const index = cities.findIndex(city => city.name === action.payload.city);
+            if (index === -1) {
+                return state;
+            }
+            cities[index] = {
+                ...cities[index],
                 isFetching: false,
                 error: action.payload.error
             };
