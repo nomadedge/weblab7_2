@@ -1,4 +1,5 @@
 import { getWeather } from '../helpers/weatherGetter';
+// const getWeather = require('../helpers/weatherGetter');
 
 export function addCity(cityName, currentState) {
     return async function (dispatch) {
@@ -39,7 +40,7 @@ export function fetchCityWeather(cityName) {
         else {
             const payload = {
                 city: cityName,
-                error: 'Weather for this city is not avaliable :('
+                error: 'Weather for this city is not available :('
             };
             dispatch({ type: 'FETCH_CITY_WEATHER_ERROR', payload: payload });
             return;

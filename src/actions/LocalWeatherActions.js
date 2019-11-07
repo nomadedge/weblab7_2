@@ -40,15 +40,15 @@ export function fetchLocalWeather() {
                         return;
                     }
 
-                    handleOpenWeather(cityName, dispatch);
+                    await handleOpenWeather(cityName, dispatch);
                 },
                 async error => {
                     cityName = defaultCity;
-                    handleOpenWeather(cityName, dispatch);
+                    await handleOpenWeather(cityName, dispatch);
                 });
         } else {
             cityName = defaultCity;
-            handleOpenWeather(cityName, dispatch);
+            await handleOpenWeather(cityName, dispatch);
         }
     }
 }
