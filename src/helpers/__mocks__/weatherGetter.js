@@ -1,5 +1,4 @@
 export function getWeather(cityName) {
-    console.log('MOCK');
     if (cityName === 'correctCityName') {
         return Promise.resolve({
             isOk: true,

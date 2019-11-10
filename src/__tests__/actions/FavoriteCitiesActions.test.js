@@ -63,7 +63,7 @@ describe('Favorite cities actions. Delete city', () => {
 });
 
 describe('Favorite cities actions. Fetch city weather', () => {
-    test('Should trgger success action if weather is available on OpenWeather', () => {
+    test('Should trigger success action if weather is available on OpenWeather', () => {
         const expectedActions = [
             { type: 'FETCH_CITY_WEATHER', payload: 'correctCityName' },
             {
@@ -89,7 +89,7 @@ describe('Favorite cities actions. Fetch city weather', () => {
         });
     });
 
-    test('Should trgger error action if weather is not available on OpenWeather', () => {
+    test('Should trigger error action if weather is not available on OpenWeather', () => {
         const expectedActions = [
             { type: 'FETCH_CITY_WEATHER', payload: 'incorrectCityName' },
             {

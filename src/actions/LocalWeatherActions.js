@@ -1,17 +1,21 @@
 import { defaultError } from '../helpers/constants';
 import { getWeather } from '../helpers/weatherGetter';
 
-const defaultCity = 'Witcher';
+let defaultCity = 'Witcher';
 const googleMapsKey = 'AIzaSyADtVQrQmnam1m9XM-mblqN2wamkglWhlY';
 
-export function fetchLocalWeather() {
+export function fetchLocalWeather(city) {
     return async function (dispatch) {
+        if (city) {
+            defaultCity = city;
+        }
+
         let cityName = '';
 
         dispatch({ type: 'FETCH_LOCAL_WEATHER' });
 
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(
+            await navigator.geolocation.getCurrentPosition(
                 async position => {
                     const googleMapsUrl =
                         'https://maps.googleapis.com/maps/api/geocode/json?latlng=' +
