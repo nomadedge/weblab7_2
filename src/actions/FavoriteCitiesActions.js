@@ -1,5 +1,4 @@
 import { getWeather } from '../helpers/weatherGetter';
-// const getWeather = require('../helpers/weatherGetter');
 
 export function addCity(cityName, currentState) {
     return async function (dispatch) {

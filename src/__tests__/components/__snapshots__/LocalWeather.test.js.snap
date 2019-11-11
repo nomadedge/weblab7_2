@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LocalWeather component matches the snapshot on custom error 1`] = `
+Array [
+  <button
+    onClick={[Function]}
+  >
+    Update local weather
+  </button>,
+  <div
+    id="weather-container"
+  >
+    <div />
+  </div>,
+]
+`;
+
+exports[`LocalWeather component matches the snapshot on loading 1`] = `
+Array [
+  <button
+    onClick={[Function]}
+  >
+    Update local weather
+  </button>,
+  <div
+    id="weather-container"
+  >
+    <div />
+  </div>,
+]
+`;
+
+exports[`LocalWeather component matches the snapshot on success 1`] = `
+Array [
+  <button
+    onClick={[Function]}
+  >
+    Update local weather
+  </button>,
+  <div
+    id="weather-container"
+  >
+    <div />
+  </div>,
+]
+`;
