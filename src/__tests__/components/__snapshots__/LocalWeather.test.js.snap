@@ -10,24 +10,21 @@ Array [
   <div
     id="weather-container"
   >
-    <div />
+    <div>
+      Weather for your city is not available :(
+    </div>
   </div>,
 ]
 `;
 
 exports[`LocalWeather component matches the snapshot on loading 1`] = `
-Array [
-  <button
-    onClick={[Function]}
-  >
-    Update local weather
-  </button>,
+<div
+  id="weather-container"
+>
   <div
-    id="weather-container"
-  >
-    <div />
-  </div>,
-]
+    id="spinner"
+  />
+</div>
 `;
 
 exports[`LocalWeather component matches the snapshot on success 1`] = `
@@ -40,7 +37,84 @@ Array [
   <div
     id="weather-container"
   >
-    <div />
+    <div
+      id="left-block"
+    >
+      <div
+        id="city-name"
+      >
+        Kiyv
+      </div>
+      <div
+        id="icon-temp"
+      >
+        <img
+          alt="Weather icon"
+          src="http://openweathermap.org/img/w/50n.png"
+        />
+        <div
+          id="temp"
+        >
+          14
+          °C
+        </div>
+      </div>
+    </div>
+    <div
+      id="right-block"
+    >
+      <div
+        className="info"
+      >
+        <div>
+          Description:
+        </div>
+        <div
+          className="value"
+        >
+          mist
+        </div>
+      </div>
+      <div
+        className="info"
+      >
+        <div>
+          Barometer:
+        </div>
+        <div
+          className="value"
+        >
+          1022
+           hPa
+        </div>
+      </div>
+      <div
+        className="info"
+      >
+        <div>
+          Humidity:
+        </div>
+        <div
+          className="value"
+        >
+          100
+           %
+        </div>
+      </div>
+      <div
+        className="info"
+      >
+        <div>
+          Wind:
+        </div>
+        <div
+          className="value"
+        >
+          3.6
+           m/s
+        </div>
+      </div>
+    </div>
   </div>,
 ]
 `;

@@ -19,9 +19,7 @@ describe('LocalWeather component', () => {
         };
 
         const store = mockStore({
-            localWeather: {
-                localCity
-            }
+            localWeather: localCity
         });
 
         const tree = renderer.create(
@@ -42,9 +40,7 @@ describe('LocalWeather component', () => {
         };
 
         const store = mockStore({
-            localWeather: {
-                localCity
-            }
+            localWeather: localCity
         });
 
         const tree = renderer.create(
@@ -72,9 +68,7 @@ describe('LocalWeather component', () => {
         };
 
         const store = mockStore({
-            localWeather: {
-                localCity
-            }
+            localWeather: localCity
         });
 
         const tree = renderer.create(
