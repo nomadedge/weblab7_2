@@ -10,13 +10,16 @@ export default function reducer(state = initialState, action) {
         case 'FETCH_LOCAL_WEATHER': {
             return {
                 ...state,
-                isFetching: true
+                isFetching: true,
+                weather: {},
+                error: null
             };
         }
         case 'FETCH_LOCAL_WEATHER_ERROR': {
             return {
                 ...state,
                 isFetching: false,
+                weather: {},
                 error: action.payload
             };
         }
@@ -25,7 +28,8 @@ export default function reducer(state = initialState, action) {
                 ...state,
                 isFetching: false,
                 city: action.payload.city,
-                weather: action.payload.weather
+                weather: action.payload.weather,
+                error: null
             };
         }
         default: {

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LocalWeather component matches the snapshot on loading 1`] = `
+exports[`App component matches the snapshot on loading 1`] = `
 Array [
   <div
     id="local-weather"

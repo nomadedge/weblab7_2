@@ -9,7 +9,7 @@ import App from '../../components/App';
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
-describe('LocalWeather component', () => {
+describe('App component', () => {
     test('matches the snapshot on loading', () => {
         const localCity = {
             isFetching: true,

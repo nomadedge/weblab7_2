@@ -56,7 +56,9 @@ export default function reducer(state = initialState, action) {
             }
             cities[index] = {
                 ...cities[index],
-                isFetching: true
+                isFetching: true,
+                error: null,
+                weather: {}
             };
             return {
                 ...state,
@@ -72,6 +74,7 @@ export default function reducer(state = initialState, action) {
             cities[index] = {
                 ...cities[index],
                 isFetching: false,
+                error: null,
                 weather: action.payload.weather
             };
             return {
@@ -88,7 +91,8 @@ export default function reducer(state = initialState, action) {
             cities[index] = {
                 ...cities[index],
                 isFetching: false,
-                error: action.payload.error
+                error: action.payload.error,
+                weather: {}
             };
             return {
                 ...state,

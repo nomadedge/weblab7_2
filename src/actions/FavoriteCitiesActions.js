@@ -42,6 +42,8 @@ export function fetchCityWeather(cityName) {
                 error: 'Weather for this city is not available :('
             };
             dispatch({ type: 'FETCH_CITY_WEATHER_ERROR', payload: payload });
+            alert(payload.error);
+            dispatch({ type: 'DELETE_CITY', payload: cityName });
             return;
         }
     }
