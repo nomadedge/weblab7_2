@@ -9,6 +9,7 @@ class Favorites extends Component {
     handleAdd = event => {
         event.preventDefault();
         this.props.addCity(event.target[0].value, this.props.favoriteCities);
+        event.target[0].value = '';
     }
 
     handleDelete = cityName => {
@@ -18,7 +19,7 @@ class Favorites extends Component {
     render() {
         return (
             <>
-                <form onSubmit={this.handleAdd}>
+                <form name='cityAdd' onSubmit={this.handleAdd}>
                     <input placeholder='Enter new favorite city' />
                     <input type='submit' value='Add city' />
                 </form>
