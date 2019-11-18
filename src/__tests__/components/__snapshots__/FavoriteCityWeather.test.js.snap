@@ -2,89 +2,93 @@
 
 exports[`FavoriteCityWeather component matches the snapshot after loading for correct city 1`] = `
 <div
-  id="weather-container"
+  id="favorite"
 >
-  <div
-    id="left-block"
+  <button
+    id="delete-button"
+    onClick={[Function]}
   >
-    <button
-      id="delete-button"
-      onClick={[Function]}
-    >
-      Delete city
-    </button>
-    <div
-      id="city-name"
-    >
-      correctCityName
-    </div>
-    <div
-      id="icon-temp"
-    >
-      <img
-        alt="Weather icon"
-        src="http://openweathermap.org/img/w/50n.png"
-      />
-      <div
-        id="temp"
-      >
-        14
-        °C
-      </div>
-    </div>
-  </div>
+    Delete city
+  </button>
   <div
-    id="right-block"
+    id="weather-container"
   >
     <div
-      className="info"
+      id="left-block"
     >
-      <div>
-        Description:
+      <div
+        id="city-name"
+      >
+        correctCityName
       </div>
       <div
-        className="value"
+        id="icon-temp"
       >
-        mist
+        <img
+          alt="Weather icon"
+          src="http://openweathermap.org/img/w/50n.png"
+        />
+        <div
+          id="temp"
+        >
+          14
+          °C
+        </div>
       </div>
     </div>
     <div
-      className="info"
+      id="right-block"
     >
-      <div>
-        Barometer:
+      <div
+        className="info"
+      >
+        <div>
+          Description:
+        </div>
+        <div
+          className="value"
+        >
+          mist
+        </div>
       </div>
       <div
-        className="value"
+        className="info"
       >
-        1022
-         hPa
-      </div>
-    </div>
-    <div
-      className="info"
-    >
-      <div>
-        Humidity:
+        <div>
+          Barometer:
+        </div>
+        <div
+          className="value"
+        >
+          1022
+           hPa
+        </div>
       </div>
       <div
-        className="value"
+        className="info"
       >
-        100
-         %
-      </div>
-    </div>
-    <div
-      className="info"
-    >
-      <div>
-        Wind:
+        <div>
+          Humidity:
+        </div>
+        <div
+          className="value"
+        >
+          100
+           %
+        </div>
       </div>
       <div
-        className="value"
+        className="info"
       >
-        3.6
-         m/s
+        <div>
+          Wind:
+        </div>
+        <div
+          className="value"
+        >
+          3.6
+           m/s
+        </div>
       </div>
     </div>
   </div>
@@ -93,28 +97,87 @@ exports[`FavoriteCityWeather component matches the snapshot after loading for co
 
 exports[`FavoriteCityWeather component matches the snapshot after loading for incorrect city 1`] = `
 <div
-  id="weather-container"
+  id="favorite"
 >
-  <div
-    id="left-block"
+  <button
+    id="delete-button"
+    onClick={[Function]}
   >
-    <button
-      id="delete-button"
-      onClick={[Function]}
-    >
-      Delete city
-    </button>
+    Delete city
+  </button>
+  <div
+    id="weather-container"
+  >
     <div
-      id="city-name"
+      id="left-block"
     >
-      incorrectCityName
+      <div
+        id="city-name"
+      >
+        incorrectCityName
+      </div>
+      <div
+        id="icon-temp"
+      >
+        <img
+          alt="Weather icon"
+        />
+        <div
+          id="temp"
+        >
+          °C
+        </div>
+      </div>
     </div>
-  </div>
-  <div
-    id="right-block"
-  >
-    <div>
-      Weather for this city is not available :(
+    <div
+      id="right-block"
+    >
+      <div
+        className="info"
+      >
+        <div>
+          Description:
+        </div>
+        <div
+          className="value"
+        />
+      </div>
+      <div
+        className="info"
+      >
+        <div>
+          Barometer:
+        </div>
+        <div
+          className="value"
+        >
+           hPa
+        </div>
+      </div>
+      <div
+        className="info"
+      >
+        <div>
+          Humidity:
+        </div>
+        <div
+          className="value"
+        >
+           %
+        </div>
+      </div>
+      <div
+        className="info"
+      >
+        <div>
+          Wind:
+        </div>
+        <div
+          className="value"
+        >
+           m/s
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -122,29 +185,33 @@ exports[`FavoriteCityWeather component matches the snapshot after loading for in
 
 exports[`FavoriteCityWeather component matches the snapshot on loading 1`] = `
 <div
-  id="weather-container"
+  id="favorite"
 >
-  <div
-    id="left-block"
+  <button
+    id="delete-button"
+    onClick={[Function]}
   >
-    <button
-      id="delete-button"
-      onClick={[Function]}
-    >
-      Delete city
-    </button>
+    Delete city
+  </button>
+  <div
+    id="weather-container"
+  >
     <div
-      id="city-name"
+      id="left-block"
     >
-      correctCityName
+      <div
+        id="city-name"
+      >
+        correctCityName
+      </div>
     </div>
-  </div>
-  <div
-    id="right-block"
-  >
     <div
-      id="spinner"
-    />
+      id="right-block"
+    >
+      <div
+        id="spinner"
+      />
+    </div>
   </div>
 </div>
 `;

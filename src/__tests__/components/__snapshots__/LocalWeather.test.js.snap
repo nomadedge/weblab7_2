@@ -18,13 +18,20 @@ Array [
 `;
 
 exports[`LocalWeather component matches the snapshot on loading 1`] = `
-<div
-  id="weather-container"
->
+Array [
+  <button
+    onClick={[Function]}
+  >
+    Update local weather
+  </button>,
   <div
-    id="spinner"
-  />
-</div>
+    id="weather-container"
+  >
+    <div
+      id="spinner"
+    />
+  </div>,
+]
 `;
 
 exports[`LocalWeather component matches the snapshot on success 1`] = `
@@ -42,9 +49,7 @@ Array [
     >
       <div
         id="city-name"
-      >
-        Kiyv
-      </div>
+      />
       <div
         id="icon-temp"
       >

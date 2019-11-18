@@ -26,6 +26,7 @@ Array [
       Your favorite cities
     </h2>
     <form
+      name="cityAdd"
       onSubmit={[Function]}
     >
       <input
@@ -37,142 +38,209 @@ Array [
       />
     </form>
     <div
-      id="weather-container"
+      id="favorite"
     >
-      <div
-        id="left-block"
+      <button
+        id="delete-button"
+        onClick={[Function]}
       >
-        <button
-          id="delete-button"
-          onClick={[Function]}
-        >
-          Delete city
-        </button>
-        <div
-          id="city-name"
-        >
-          Kirov
-        </div>
-      </div>
+        Delete city
+      </button>
       <div
-        id="right-block"
+        id="weather-container"
       >
         <div
-          id="spinner"
-        />
-      </div>
-    </div>
-    <div
-      id="weather-container"
-    >
-      <div
-        id="left-block"
-      >
-        <button
-          id="delete-button"
-          onClick={[Function]}
+          id="left-block"
         >
-          Delete city
-        </button>
-        <div
-          id="city-name"
-        >
-          Kiyv
+          <div
+            id="city-name"
+          >
+            Kirov
+          </div>
         </div>
         <div
-          id="icon-temp"
+          id="right-block"
         >
-          <img
-            alt="Weather icon"
-            src="http://openweathermap.org/img/w/50n.png"
+          <div
+            id="spinner"
           />
-          <div
-            id="temp"
-          >
-            14
-            °C
-          </div>
         </div>
       </div>
+    </div>
+    <div
+      id="favorite"
+    >
+      <button
+        id="delete-button"
+        onClick={[Function]}
+      >
+        Delete city
+      </button>
       <div
-        id="right-block"
+        id="weather-container"
       >
         <div
-          className="info"
+          id="left-block"
         >
-          <div>
-            Description:
+          <div
+            id="city-name"
+          >
+            Kiyv
           </div>
           <div
-            className="value"
+            id="icon-temp"
           >
-            mist
+            <img
+              alt="Weather icon"
+              src="http://openweathermap.org/img/w/50n.png"
+            />
+            <div
+              id="temp"
+            >
+              14
+              °C
+            </div>
           </div>
         </div>
         <div
-          className="info"
+          id="right-block"
         >
-          <div>
-            Barometer:
+          <div
+            className="info"
+          >
+            <div>
+              Description:
+            </div>
+            <div
+              className="value"
+            >
+              mist
+            </div>
           </div>
           <div
-            className="value"
+            className="info"
           >
-            1022
-             hPa
-          </div>
-        </div>
-        <div
-          className="info"
-        >
-          <div>
-            Humidity:
+            <div>
+              Barometer:
+            </div>
+            <div
+              className="value"
+            >
+              1022
+               hPa
+            </div>
           </div>
           <div
-            className="value"
+            className="info"
           >
-            100
-             %
-          </div>
-        </div>
-        <div
-          className="info"
-        >
-          <div>
-            Wind:
+            <div>
+              Humidity:
+            </div>
+            <div
+              className="value"
+            >
+              100
+               %
+            </div>
           </div>
           <div
-            className="value"
+            className="info"
           >
-            3.6
-             m/s
+            <div>
+              Wind:
+            </div>
+            <div
+              className="value"
+            >
+              3.6
+               m/s
+            </div>
           </div>
         </div>
       </div>
     </div>
     <div
-      id="weather-container"
+      id="favorite"
     >
-      <div
-        id="left-block"
+      <button
+        id="delete-button"
+        onClick={[Function]}
       >
-        <button
-          id="delete-button"
-          onClick={[Function]}
-        >
-          Delete city
-        </button>
+        Delete city
+      </button>
+      <div
+        id="weather-container"
+      >
         <div
-          id="city-name"
+          id="left-block"
         >
-          Hyperion
+          <div
+            id="city-name"
+          >
+            Hyperion
+          </div>
+          <div
+            id="icon-temp"
+          >
+            <img
+              alt="Weather icon"
+            />
+            <div
+              id="temp"
+            >
+              °C
+            </div>
+          </div>
         </div>
-      </div>
-      <div
-        id="right-block"
-      >
-        <div>
-          Weather for this city is not available :(
+        <div
+          id="right-block"
+        >
+          <div
+            className="info"
+          >
+            <div>
+              Description:
+            </div>
+            <div
+              className="value"
+            />
+          </div>
+          <div
+            className="info"
+          >
+            <div>
+              Barometer:
+            </div>
+            <div
+              className="value"
+            >
+               hPa
+            </div>
+          </div>
+          <div
+            className="info"
+          >
+            <div>
+              Humidity:
+            </div>
+            <div
+              className="value"
+            >
+               %
+            </div>
+          </div>
+          <div
+            className="info"
+          >
+            <div>
+              Wind:
+            </div>
+            <div
+              className="value"
+            >
+               m/s
+            </div>
+          </div>
         </div>
       </div>
     </div>

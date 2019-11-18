@@ -376,7 +376,7 @@ describe('Fetch local weather', () => {
             {
                 type: 'FETCH_LOCAL_WEATHER_SUCCESS',
                 payload: {
-                    city: 'correctCityName',
+                    name: 'correctCityName',
                     weather: {
                         iconUrl: "http://openweathermap.org/img/w/50n.png",
                         description: "mist",
@@ -423,7 +423,7 @@ describe('Fetch local weather', () => {
             {
                 type: 'FETCH_LOCAL_WEATHER_SUCCESS',
                 payload: {
-                    city: 'correctCityName',
+                    name: 'correctCityName',
                     weather: {
                         iconUrl: "http://openweathermap.org/img/w/50n.png",
                         description: "mist",
@@ -444,68 +444,76 @@ describe('Fetch local weather', () => {
     });
 
     // Finish last two tests
-    test('Should dispatch custom error if user denied access to geolocation access and openweather api did not find default city', () => {
-        const mockGeolocation = {
-            getCurrentPosition: jest.fn()
-                .mockImplementation((success) => Promise.resolve(success({
-                    coords: {
-                        latitude: 10,
-                        longitude: 10
-                    }
-                })))
-        };
-        navigator.geolocation = mockGeolocation;
+    // test('Should dispatch custom error if user denied access to geolocation access and openweather api did not find default city', () => {
+    //     const mockGeolocation = {
+    //         getCurrentPosition: jest.fn()
+    //             .mockImplementation(
+    //                 (success) => Promise.reject(success({
+    //                     coords: {
+    //                         latitude: 10,
+    //                         longitude: 10
+    //                     }
+    //                 })),
+    //                 (error) => Promise.resolve(error({
+    //                     message: "Geolocation access denied"
+    //                 })))
+    //     };
+    //     navigator.geolocation = mockGeolocation;
 
-        fetch.mockResponseOnce(JSON.stringify({}));
+    //     fetch.mockResponseOnce(JSON.stringify({}));
 
-        const expectedActions = [
-            { type: 'FETCH_LOCAL_WEATHER' },
-            { type: 'FETCH_LOCAL_WEATHER_ERROR', payload: 'Weather for your city is not available :(' }
-        ];
+    //     const expectedActions = [
+    //         { type: 'FETCH_LOCAL_WEATHER' },
+    //         { type: 'FETCH_LOCAL_WEATHER_ERROR', payload: 'Weather for your city is not available :(' }
+    //     ];
 
-        const store = mockStore(initialState);
+    //     const store = mockStore(initialState);
 
-        return store.dispatch(actions.fetchLocalWeather('incorrectCityName')).then(() => {
-            expect(store.getActions()).toEqual(expectedActions);
-        });
-    });
+    //     return store.dispatch(actions.fetchLocalWeather('incorrectCityName')).then(() => {
+    //         expect(store.getActions()).toEqual(expectedActions);
+    //     });
+    // });
 
-    test('Should dispatch success if user denied access to geolocation access and openweather api found default city', () => {
-        const mockGeolocation = {
-            getCurrentPosition: jest.fn()
-                .mockImplementation((success) => Promise.resolve(success({
-                    coords: {
-                        latitude: 10,
-                        longitude: 10
-                    }
-                })))
-        };
-        navigator.geolocation = mockGeolocation;
+    // test('Should dispatch success if user denied access to geolocation access and openweather api found default city', () => {
+    //     const mockGeolocation = {
+    //         getCurrentPosition: jest.fn()
+    //             .mockImplementation(
+    //                 (success) => Promise.reject(success({
+    //                     coords: {
+    //                         latitude: 10,
+    //                         longitude: 10
+    //                     }
+    //                 })),
+    //                 (error) => Promise.resolve(error({
+    //                     message: "Geolocation access denied"
+    //                 })))
+    //     };
+    //     navigator.geolocation = mockGeolocation;
 
-        fetch.mockResponseOnce(JSON.stringify({}));
+    //     fetch.mockResponseOnce(JSON.stringify({}));
 
-        const expectedActions = [
-            { type: 'FETCH_LOCAL_WEATHER' },
-            {
-                type: 'FETCH_LOCAL_WEATHER_SUCCESS',
-                payload: {
-                    city: 'correctCityName',
-                    weather: {
-                        iconUrl: "http://openweathermap.org/img/w/50n.png",
-                        description: "mist",
-                        temperature: "14",
-                        pressure: 1022,
-                        humidity: 100,
-                        windSpeed: 3.6
-                    }
-                }
-            }
-        ];
+    //     const expectedActions = [
+    //         { type: 'FETCH_LOCAL_WEATHER' },
+    //         {
+    //             type: 'FETCH_LOCAL_WEATHER_SUCCESS',
+    //             payload: {
+    //                 city: 'correctCityName',
+    //                 weather: {
+    //                     iconUrl: "http://openweathermap.org/img/w/50n.png",
+    //                     description: "mist",
+    //                     temperature: "14",
+    //                     pressure: 1022,
+    //                     humidity: 100,
+    //                     windSpeed: 3.6
+    //                 }
+    //             }
+    //         }
+    //     ];
 
-        const store = mockStore(initialState);
+    //     const store = mockStore(initialState);
 
-        return store.dispatch(actions.fetchLocalWeather('correctCityName')).then(() => {
-            expect(store.getActions()).toEqual(expectedActions);
-        });
-    });
+    //     return store.dispatch(actions.fetchLocalWeather('correctCityName')).then(() => {
+    //         expect(store.getActions()).toEqual(expectedActions);
+    //     });
+    // });
 });

@@ -4,6 +4,8 @@ import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import * as actions from '../../actions/FavoriteCitiesActions';
 
+window.alert = jest.fn();
+
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
@@ -89,7 +91,7 @@ describe('Favorite cities actions. Fetch city weather', () => {
         });
     });
 
-    test('Should trigger error action if weather is not available on OpenWeather', () => {
+    test('Should trigger error action if weather is not available on OpenWeather and delete city', () => {
         const expectedActions = [
             { type: 'FETCH_CITY_WEATHER', payload: 'incorrectCityName' },
             {
@@ -98,7 +100,8 @@ describe('Favorite cities actions. Fetch city weather', () => {
                     city: 'incorrectCityName',
                     error: 'Weather for this city is not available :('
                 }
-            }
+            },
+            { type: 'DELETE_CITY', payload: 'incorrectCityName' }
         ];
 
         const store = mockStore(middleState);

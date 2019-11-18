@@ -5,7 +5,7 @@ describe('Local weather reducer', () => {
     test('Should return the initial state by default', () => {
         const expectedResult = {
             isFetching: false,
-            city: null,
+            name: null,
             weather: {},
             error: null
         };
@@ -16,7 +16,7 @@ describe('Local weather reducer', () => {
     test('Should handle the start of fetching', () => {
         const expectedResult = {
             isFetching: true,
-            city: null,
+            name: null,
             weather: {},
             error: null
         };
@@ -28,7 +28,7 @@ describe('Local weather reducer', () => {
     test('Should handle the finish of fetching with error', () => {
         const expectedResult = {
             isFetching: false,
-            city: null,
+            name: null,
             weather: {},
             error: defaultError
         };
@@ -40,7 +40,7 @@ describe('Local weather reducer', () => {
     test('Should handle the finish of fetching with success', () => {
         const expectedResult = {
             isFetching: false,
-            city: 'Witcher',
+            name: 'Witcher',
             weather: {
                 iconUrl: "http://openweathermap.org/img/w/50n.png",
                 description: "mist",
@@ -54,12 +54,12 @@ describe('Local weather reducer', () => {
 
         expect(reducer({
             isFetching: true,
-            city: null,
+            name: null,
             weather: {},
             error: null
         }, {
             type: 'FETCH_LOCAL_WEATHER_SUCCESS', payload: {
-                city: 'Witcher',
+                name: 'Witcher',
                 weather: {
                     iconUrl: "http://openweathermap.org/img/w/50n.png",
                     description: "mist",

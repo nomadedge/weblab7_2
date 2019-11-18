@@ -27,7 +27,7 @@ export default function reducer(state = initialState, action) {
             return {
                 ...state,
                 isFetching: false,
-                name: action.payload.city,
+                name: action.payload.name,
                 weather: action.payload.weather,
                 error: null
             };

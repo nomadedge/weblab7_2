@@ -62,7 +62,7 @@ async function handleOpenWeather(cityName, dispatch) {
 
     if (weatherResult.isOk) {
         const payload = {
-            city: cityName,
+            name: cityName,
             weather: weatherResult.weather
         };
         dispatch({ type: 'FETCH_LOCAL_WEATHER_SUCCESS', payload: payload });
