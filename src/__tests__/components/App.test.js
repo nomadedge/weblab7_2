@@ -10,7 +10,7 @@ const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
 describe('App component', () => {
-    test('matches the snapshot on loading', () => {
+    test('matches the snapshot', () => {
         const localCity = {
             isFetching: true,
             city: null,
@@ -37,12 +37,6 @@ describe('App component', () => {
                     humidity: 100,
                     windSpeed: 3.6
                 }
-            },
-            {
-                name: 'Hyperion',
-                isFetching: false,
-                error: 'Weather for this city is not available :(',
-                weather: {}
             }
         ];
 

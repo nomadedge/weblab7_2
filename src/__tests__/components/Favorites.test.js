@@ -30,12 +30,6 @@ describe('Favorites component', () => {
                     humidity: 100,
                     windSpeed: 3.6
                 }
-            },
-            {
-                name: 'Hyperion',
-                isFetching: false,
-                error: 'Weather for this city is not available :(',
-                weather: {}
             }
         ];
 

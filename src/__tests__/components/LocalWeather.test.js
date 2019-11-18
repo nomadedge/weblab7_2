@@ -31,7 +31,7 @@ describe('LocalWeather component', () => {
         expect(tree).toMatchSnapshot();
     });
 
-    test('matches the snapshot on custom error', () => {
+    test('matches the snapshot on error', () => {
         const localCity = {
             isFetching: false,
             city: 'Kiyv',

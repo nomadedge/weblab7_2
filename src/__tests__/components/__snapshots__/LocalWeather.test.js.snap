@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LocalWeather component matches the snapshot on custom error 1`] = `
+exports[`LocalWeather component matches the snapshot on error 1`] = `
 Array [
   <button
     onClick={[Function]}

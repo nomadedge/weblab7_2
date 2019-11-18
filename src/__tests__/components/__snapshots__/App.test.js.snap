@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App component matches the snapshot on loading 1`] = `
+exports[`App component matches the snapshot 1`] = `
 Array [
   <div
     id="local-weather"
@@ -153,91 +153,6 @@ Array [
               className="value"
             >
               3.6
-               m/s
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      id="favorite"
-    >
-      <button
-        id="delete-button"
-        onClick={[Function]}
-      >
-        Delete city
-      </button>
-      <div
-        id="weather-container"
-      >
-        <div
-          id="left-block"
-        >
-          <div
-            id="city-name"
-          >
-            Hyperion
-          </div>
-          <div
-            id="icon-temp"
-          >
-            <img
-              alt="Weather icon"
-            />
-            <div
-              id="temp"
-            >
-              °C
-            </div>
-          </div>
-        </div>
-        <div
-          id="right-block"
-        >
-          <div
-            className="info"
-          >
-            <div>
-              Description:
-            </div>
-            <div
-              className="value"
-            />
-          </div>
-          <div
-            className="info"
-          >
-            <div>
-              Barometer:
-            </div>
-            <div
-              className="value"
-            >
-               hPa
-            </div>
-          </div>
-          <div
-            className="info"
-          >
-            <div>
-              Humidity:
-            </div>
-            <div
-              className="value"
-            >
-               %
-            </div>
-          </div>
-          <div
-            className="info"
-          >
-            <div>
-              Wind:
-            </div>
-            <div
-              className="value"
-            >
                m/s
             </div>
           </div>
