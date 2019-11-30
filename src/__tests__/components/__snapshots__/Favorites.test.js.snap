@@ -1,28 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Favorites component matches the snapshot 1`] = `
+exports[`Favorites component matches the snapshot on adding 1`] = `
 Array [
-  <form
-    name="cityAdd"
-    onSubmit={[Function]}
+  <div
+    id="cityAdd"
   >
-    <input
-      placeholder="Enter new favorite city"
-    />
-    <input
-      type="submit"
-      value="Add city"
-    />
-  </form>,
+    <form
+      name="cityAdd"
+      onSubmit={[Function]}
+    >
+      <input
+        disabled={true}
+        id="input"
+        placeholder="Enter new favorite city"
+      />
+      <input
+        disabled={true}
+        type="submit"
+        value="Add city"
+      />
+    </form>
+  </div>,
   <div
     id="favorite"
   >
-    <button
-      id="delete-button"
-      onClick={[Function]}
-    >
-      Delete city
-    </button>
     <div
       id="weather-container"
     >

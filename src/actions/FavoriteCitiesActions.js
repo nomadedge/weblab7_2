@@ -35,7 +35,7 @@ export function fetchCityWeather(cityName) {
         } else {
             const payload = {
                 city: cityName,
-                error: favoriteCityError
+                error: 'Loading error.'
             };
             dispatch({ type: 'FETCH_CITY_WEATHER_ERROR', payload: payload });
         }

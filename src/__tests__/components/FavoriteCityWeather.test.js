@@ -17,12 +17,6 @@ beforeEach(() => {
             isFetching: true,
             error: null,
             weather: {}
-        },
-        {
-            name: 'incorrectCityName',
-            isFetching: true,
-            error: null,
-            weather: {}
         }
     ];
 });
@@ -54,6 +48,25 @@ describe('FavoriteCityWeather component', () => {
             humidity: 100,
             windSpeed: 3.6
         };
+
+        const store = mockStore({
+            favoriteCities: {
+                cities: existingArray
+            }
+        });
+
+        const tree = renderer.create(
+            <Provider store={store}>
+                <FavoriteCityWeather cityName='correctCityName' />
+            </Provider>
+        ).toJSON();
+
+        expect(tree).toMatchSnapshot();
+    });
+
+    test('matches the snapshot after loading error', () => {
+        existingArray[0].isFetching = false;
+        existingArray[0].error = 'Loading error.';
 
         const store = mockStore({
             favoriteCities: {

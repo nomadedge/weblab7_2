@@ -4,7 +4,7 @@ import renderer from 'react-test-renderer';
 
 describe('CityWeather component', () => {
     test('matches the snapshot', () => {
-        const cityWeather = {
+        const city = {
             name: 'correctCityName',
             isFetching: false,
             error: null,
@@ -19,7 +19,7 @@ describe('CityWeather component', () => {
         };
 
         const tree = renderer.create(
-            <CityWeather cityWeather={cityWeather} />
+            <CityWeather city={city} />
         ).toJSON();
 
         expect(tree).toMatchSnapshot();

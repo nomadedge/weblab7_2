@@ -25,27 +25,26 @@ Array [
     <h2>
       Your favorite cities
     </h2>
-    <form
-      name="cityAdd"
-      onSubmit={[Function]}
+    <div
+      id="cityAdd"
     >
-      <input
-        placeholder="Enter new favorite city"
-      />
-      <input
-        type="submit"
-        value="Add city"
-      />
-    </form>
+      <form
+        name="cityAdd"
+        onSubmit={[Function]}
+      >
+        <input
+          id="input"
+          placeholder="Enter new favorite city"
+        />
+        <input
+          type="submit"
+          value="Add city"
+        />
+      </form>
+    </div>
     <div
       id="favorite"
     >
-      <button
-        id="delete-button"
-        onClick={[Function]}
-      >
-        Delete city
-      </button>
       <div
         id="weather-container"
       >

@@ -1,5 +1,38 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`FavoriteCityWeather component matches the snapshot after loading error 1`] = `
+<div
+  id="favorite"
+>
+  <button
+    id="delete-button"
+    onClick={[Function]}
+  >
+    Delete city
+  </button>
+  <div
+    id="weather-container"
+  >
+    <div
+      id="left-block"
+    >
+      <div
+        id="city-name"
+      >
+        correctCityName
+      </div>
+    </div>
+    <div
+      id="right-block"
+    >
+      <div>
+        Loading error.
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`FavoriteCityWeather component matches the snapshot after loading for correct city 1`] = `
 <div
   id="favorite"
@@ -99,12 +132,6 @@ exports[`FavoriteCityWeather component matches the snapshot on loading 1`] = `
 <div
   id="favorite"
 >
-  <button
-    id="delete-button"
-    onClick={[Function]}
-  >
-    Delete city
-  </button>
   <div
     id="weather-container"
   >

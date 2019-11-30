@@ -45,6 +45,7 @@ describe('App component', () => {
                 localCity
             },
             favoriteCities: {
+                isAdding: false,
                 cities: existingArray
             }
         });
