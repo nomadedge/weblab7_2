@@ -41,7 +41,7 @@ class LocalWeather extends Component {
                 <>
                     <button onClick={fetchLocalWeather}>Update local weather</button>
                     <div id='weather-container'>
-                        <CityWeather cityWeather={localWeather} />
+                        <CityWeather city={localWeather} />
                     </div>
                 </>
             );
