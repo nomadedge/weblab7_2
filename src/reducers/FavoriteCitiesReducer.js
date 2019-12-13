@@ -19,6 +19,8 @@ function loadFavorites() {
 }
 
 const initialState = {
+    showModal: false,
+    modalText: '',
     isAdding: false,
     cities: loadFavorites()
 }
@@ -41,7 +43,8 @@ export default function reducer(state = initialState, action) {
                 });
                 return newState;
             }
-            alert('This city is already added.')
+            newState.showModal = true;
+            newState.modalText = 'This city is already added.';
             return newState;
         }
         case 'ADD_CITY_ERROR': {
@@ -97,6 +100,12 @@ export default function reducer(state = initialState, action) {
                 error: action.payload.error,
                 weather: {}
             };
+            return newState;
+        }
+        case 'SHOW_HIDE_MODAL': {
+            const newState = { ...state};
+            newState.showModal = !newState.showModal;
+            newState.modalText = action.payload;
             return newState;
         }
         default: {

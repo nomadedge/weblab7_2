@@ -4,7 +4,7 @@ import { getWeatherByName } from '../helpers/weatherGetter';
 export function addCity(cityName) {
     return async function (dispatch) {
         if (!cityName) {
-            alert('Please enter the city.');
+            dispatch({ type: 'SHOW_HIDE_MODAL', payload: 'Please enter the city.' });
             return;
         }
         dispatch({ type: 'ADD_CITY' });
@@ -13,8 +13,8 @@ export function addCity(cityName) {
             dispatch({ type: 'ADD_CITY_SUCCESS', payload: weatherObj });
 
         } else {
-            alert(favoriteCityError);
             dispatch({ type: 'ADD_CITY_ERROR' });
+            dispatch({ type: 'SHOW_HIDE_MODAL', payload: favoriteCityError });
         }
     }
 }
@@ -39,5 +39,11 @@ export function fetchCityWeather(cityName) {
             };
             dispatch({ type: 'FETCH_CITY_WEATHER_ERROR', payload: payload });
         }
+    }
+}
+
+export function handleModal() {
+    return async function (dispatch) {
+        dispatch({ type: 'SHOW_HIDE_MODAL' });
     }
 }
